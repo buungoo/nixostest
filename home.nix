@@ -75,7 +75,7 @@
     git = {
       enable = true;
       userName = "buungoo";
-      userEmail = "bergdahl0101@gmail.com";
+      userEmail = "bergdahlalex@protonmail.com";
     };
   };
 

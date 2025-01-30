@@ -67,6 +67,9 @@
   programs = {
     zsh = {
       enable = true;
+      enableCompletion = true;
+      autosuggestion.enable = true;
+      syntaxHighlighting.enable = true;
     };
     zoxide = {
       enable = true;
@@ -76,6 +79,9 @@
       enable = true;
       userName = "buungoo";
       userEmail = "bergdahlalex@protonmail.com";
+    };
+    ghostty = {
+      enable = true;
     };
   };
 

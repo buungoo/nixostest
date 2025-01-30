@@ -68,6 +68,10 @@
     zsh = {
       enable = true;
     };
+    zoxide = {
+      enable = true;
+      options = [ "--cmd cd" ];
+    };
     git = {
       enable = true;
       userName = "buungoo";

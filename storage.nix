@@ -15,7 +15,17 @@
       ];
       device = "/mnt/disks/data*";
       fsType = "mergerfs";
-      options = [ "defaults" "minfreespace=10G" "fsname=mergerfs-storage" "uid=1000" "gid=100" ];
+      options = [
+	"nonempty"
+        "defaults"
+	"allow_other"
+	"fsname=mergerfs"
+	"cache.files=off"
+	"category.create=mfs"
+	"dropecacheonclose=false"
+	"moveonenospc=true"
+	"minfreespace=10G"
+      ];
     };
     
   # Parity disks
@@ -45,7 +55,7 @@
     contentFiles = [
       # Defines the files to use as content list.
       "/mnt/disks/data0/.snapraid.content"
-      "/var/.snapraid.content"
+      "/mnt/disks/parity0/.snapraid.content"
     ];
     dataDisks = {
       # Defines the data disks to use

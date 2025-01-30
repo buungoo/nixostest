@@ -16,21 +16,13 @@
       device = "/mnt/disks/data*";
       fsType = "mergerfs";
       noCheck = true; # sets the 0 2 to 0 0, this should be default for mergerfs but is not?
-	#      options = [
-	# "defaults"
-	# "allow_other"
-	# "fsname=mergerfs-storage"
-	# "cache.files=off"
-	# "category.create=mfs"
-	# "dropecacheonclose=false"
-	# "moveonenospc=true"
-	# "minfreespace=10G"
-	#      ];
       options = [
         "defaults"
         "allow_other"
+	"fsname=mergerfs"
         "cache.files=off"
         "category.create=mfs"
+	"dropcacheonclose=false"
         "moveonenospc=true"
         "minfreespace=10G"
       ];
@@ -39,10 +31,6 @@
   # Parity disks
   fileSystems."/mnt/disks/parity0" =
     {
-      # depends = [
-      # # The `disk*` mounts have to be mounted in this given order.
-      # "/mnt/storage"
-      # ];
       device = "/dev/disk/by-label/Parity0";
       fsType = "ext4";
     };  

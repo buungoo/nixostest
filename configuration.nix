@@ -1,7 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ ./hardware-configuration.nix ];
+  imports = [
+  ./hardware-configuration.nix
+  ./storage.nix
+  ];
 
   boot = {
     loader = {
@@ -89,6 +92,7 @@
   environment.systemPackages = with pkgs; [
      neovim
      lazydocker
+     mergerfs
   ];
 
   virtualisation = {

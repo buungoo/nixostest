@@ -9,7 +9,8 @@
     
   # Mergerfs pool
   fileSystems."/mnt/storage" =
-    { depends = [
+    {
+      depends = [
       # The `disk*` mounts have to be mounted in this given order.
       "/mnt/disks/data0"
       ];

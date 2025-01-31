@@ -34,6 +34,11 @@
     hostName = "nas0";
     networkmanager.enable = true;
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [];
+      allowedUDPPorts = [];
+    };
   };
 
   # Configure console keymap
@@ -79,7 +84,7 @@
       };
     };
     printing.enable = true;
-    openssh.enable = true;
+    openssh.enable = false;
   };
 
   # Specify program that may be on the system
@@ -101,6 +106,12 @@
       autoPrune = {
         enable = true;
 	dates = "weekly";
+      };
+      daemon.settings = {
+        hosts = [
+          "unix:///var/run/docker.sock"  # Keep the Unix socket for local access
+          # "tcp://0.0.0.0:2375"           # Listen on all interfaces on port 2375
+        ];
       };
     };
   };
